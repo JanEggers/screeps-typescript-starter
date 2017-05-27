@@ -1,4 +1,4 @@
-export interface EnvOptions {
+﻿export interface EnvOptions {
   ENV?: string;
   ROOT?: string;
   TEST?: boolean;
@@ -12,4 +12,8 @@ export interface Credentials {
   serverUrl: string;
   serverPassword?: string;
   gzip?: boolean;
+}
+
+export interface LocalPath {
+    localPath: string;
 }
