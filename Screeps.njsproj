@@ -36,27 +36,26 @@
     <Content Include=".editorconfig" />
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="config.example.json" />
     <Content Include="config.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="test\mocha.opts" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="typings.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="gulpfile.js" />
-    <Compile Include="libs\gulp-dot-flatten.js" />
-    <Compile Include="libs\gulp-screeps-upload.js" />
-    <Compile Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="libs\" />
     <Folder Include="src\" />
     <Folder Include="src\managers\" />
     <Folder Include="src\roles\" />
+    <Folder Include="test\" />
+    <Folder Include="test\components\" />
+    <Folder Include="test\components\creeps\" />
+    <Folder Include="test\mock\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="libs\screeps-webpack-sources.ts" />
     <TypeScriptCompile Include="src\contracts.ts" />
     <TypeScriptCompile Include="src\index.d.ts" />
     <TypeScriptCompile Include="src\main.ts" />
@@ -76,6 +75,12 @@
     <TypeScriptCompile Include="src\roles\warrior.ts" />
     <TypeScriptCompile Include="src\states.ts" />
     <TypeScriptCompile Include="src\tools.ts" />
+    <TypeScriptCompile Include="test\components\creeps\creepActions.test.ts" />
+    <TypeScriptCompile Include="test\helper.ts" />
+    <TypeScriptCompile Include="test\lodash.ts" />
+    <TypeScriptCompile Include="test\mock\factory.creep.ts" />
+    <TypeScriptCompile Include="test\mock\game.ts" />
+    <TypeScriptCompile Include="webpack.config.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

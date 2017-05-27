@@ -1,4 +1,4 @@
-import * as path from "path";
+﻿import * as path from "path";
 import * as webpack from "webpack";
 import * as Config from "webpack-chain";
 import { ScreepsSourceMapToJson } from "../libs/screeps-webpack-sources";
@@ -126,25 +126,7 @@ export function init(options: EnvOptions): Config {
       .loader("awesome-typescript-loader")
       .options({ configFileName: "tsconfig.json" });
 
-  config.module.rule("lint")
-    .test(/\.tsx?$/)
-    .exclude
-      .add(path.join(ROOT, "src/snippets"))
-      .add(path.join(ROOT, "src/lib"))
-      .end()
-    .use("tslint")
-      .loader("tslint-loader")
-      .options({
-        configFile: path.join(ROOT, "tslint.json"),
-        // automaticall fix linting errors
-        fix: false,
-        // you can search NPM and install custom formatters
-        formatter: "stylish",
-        // enables type checked rules like 'for-in-array'
-        // uses tsconfig.json from current working directory
-        typeCheck: false,
-      });
-
+  
   // return the config object
   return config;
 }

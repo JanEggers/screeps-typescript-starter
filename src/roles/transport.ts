@@ -1,4 +1,4 @@
-import {
+﻿import {
     StateManager,
     approching,
     stateNames,
@@ -59,7 +59,7 @@ export namespace Transport {
     }
 
     function findEnergy(creep: Creep) {
-        var targets = creep.room.find<Resource>(FIND_DROPPED_ENERGY);
+        var targets = creep.room.find<Resource>(FIND_DROPPED_RESOURCES);
         if(targets.length) {
             var sortedTargets = targets.sort((a, b) => {
                 return b.amount - a.amount;
